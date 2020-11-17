@@ -19,25 +19,45 @@
       <button id="cityZipButton">Zip code</button>
       <hr />
       <form id="cityName" class="displayNone">
-         <label>Enter City name :</label><input placeholder="City Name"><br />
+         <label>Enter City name :</label><input name='q' placeholder="City Name" required=true><br />
          <button id="search">Search</button>
       </form>
       <form id="cityId" class="displayNone">
-         <label>Enter City Id :</label><input placeholder="City Id"><br />
+         <label>Enter City Id :</label><input name='userId' type="number" placeholder="City Id" required=true><br />
          <button id="search">Search</button>
       </form>
       <form id="cityLat" class="displayNone">
-         <label>Enter latitude :</label><input placeholder="latitude">
-         <label>Enter longitude :</label><input placeholder="longitude"><br />
+         <label>Enter latitude :</label><input name='lat' type="number" placeholder="latitude" required=true>
+         <label>Enter longitude :</label><input name='lon' type="number" placeholder="longitude" required=true><br />
          <button id="search">Search</button>
       </form>
       <form id="cityZip" class="displayNone">
-         <label>Enter Zip code :</label><input placeholder="Zip code"><br />
+         <label>Enter Zip code :</label><input name='zip' type="number" placeholder="Zip code" required=true><br />
          <button id="search">Search</button>
       </form>
 
-      <p id="message-1"></p>
-      <p id="message-2"></p>
+      <div id="message-1"></div>
+      <div id="message-2" class="displayNone">
+         <hr />
+         <label>City Id : </label>
+         <label id="cityidData">12124124</label><br />
+         <label>City Name : </label>
+         <label id="cityNameData">12124124</label><br />
+         <label>latitude : </label>
+         <label id="latitudeData">12124124</label><br />
+         <label>longitude : </label>
+         <label id="longitudeData">12124124</label><br />
+         <label >current temprature : </label>
+         <label id="currentData">12124124</label><br />
+         <label>minimum temprature : </label>
+         <label id="minData">12124124</label><br />
+         <label>maximum temprature : </label>
+         <label id="maxData">12124124</label><br />
+         <label>pressure : </label>
+         <label id="pressureData">12124124</label><br />
+         <label>humidity : </label>
+         <label id="humidityData">12124124</label><br />    
+      </div>
 
    </div>
    <script src="/js/app.js"></script>
