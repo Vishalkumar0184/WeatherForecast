@@ -4,13 +4,13 @@ const getWeather = (req, res) => {
     console.log("query : ", req.query)
     let url = '';
     if (req.query.q) {
-        url = `http://api.openweathermap.org/data/2.5/weather?q=${req.query.q}&appid=${process.env.accessKey}`;
+        url = `http://api.openweathermap.org/data/2.5/weather?q=${req.query.q}&appid=${process.env.ACCESS_KEY}`;
     } else if (req.query.id) {
-        url = `http://api.openweathermap.org/data/2.5/weather?id=${req.query.id}&appid=${process.env.accessKey}`;
+        url = `http://api.openweathermap.org/data/2.5/weather?id=${req.query.id}&appid=${process.env.ACCESS_KEY}`;
     } else if (req.query.zip) {
-        url = `http://api.openweathermap.org/data/2.5/weather?zip=${req.query.zip}&appid=${process.env.accessKey}`;
+        url = `http://api.openweathermap.org/data/2.5/weather?zip=${req.query.zip}&appid=${process.env.ACCESS_KEY}`;
     } else if (req.query.lat && req.query.lon) {
-        url = `http://api.openweathermap.org/data/2.5/weather?lat=${req.query.lat}&lon=${req.query.lon}&appid=${process.env.accessKey}`;
+        url = `http://api.openweathermap.org/data/2.5/weather?lat=${req.query.lat}&lon=${req.query.lon}&appid=${process.env.ACCESS_KEY}`;
     }
 
     request(url, (error, response) => {

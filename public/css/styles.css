@@ -1,3 +1,10 @@
+.displayNone {
+    display: none;
+}
+
+.displayInline {
+    display: inline-block;
+}
 
 body{
 
