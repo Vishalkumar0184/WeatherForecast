@@ -27,10 +27,7 @@ const maxDatalabel = document.querySelector('#maxData')
 const pressureDatalabel = document.querySelector('#pressureData')
 const humidityDatalabel = document.querySelector('#humidityData')
 
-console.log("Button", cityNameButton, cityNameLabel)
-
 cityNameButton.addEventListener("click", () => {
-    console.log("cityNameButton clicked")
     cityNameLabel.className = "displayInline";
     cityIdLabel.className = "displayNone";
     cityLatLabel.className = "displayNone";
@@ -38,7 +35,6 @@ cityNameButton.addEventListener("click", () => {
     messageTwo.className = "displayNone"
 })
 cityIdButton.addEventListener("click", () => {
-    console.log("cityIdButton clicked")
     cityNameLabel.className = "displayNone";
     cityIdLabel.className = "displayInline";
     cityLatLabel.className = "displayNone";
@@ -46,7 +42,6 @@ cityIdButton.addEventListener("click", () => {
     messageTwo.className = "displayNone"
 })
 cityCoordinateButton.addEventListener("click", () => {
-    console.log("cityCoordinateButton clicked")
     cityNameLabel.className = "displayNone";
     cityIdLabel.className = "displayNone";
     cityLatLabel.className = "displayInline";
@@ -54,15 +49,12 @@ cityCoordinateButton.addEventListener("click", () => {
     messageTwo.className = "displayNone"
 })
 cityZipButton.addEventListener("click", () => {
-    console.log("cityNameButton clicked")
     cityNameLabel.className = "displayNone";
     cityIdLabel.className = "displayNone";
     cityLatLabel.className = "displayNone";
     cityZipLabel.className = "displayInline";
     messageTwo.className = "displayNone"
 })
-
-console.log("cityNameHandler", cityNameHandler)
 
 cityNameHandler.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -102,7 +94,6 @@ function submitHandler(event) {
             if (data.error) {
                 messageOne.textContent = (data.error)
             } else {
-                console.log("messageTwo")
                 messageTwo.className = "displayInline";
                 messageOne.textContent = "";
                 cityidDatalabel.innerHTML = data.result.cityId;
