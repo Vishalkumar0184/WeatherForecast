@@ -90,15 +90,14 @@ function submitHandler(event) {
     let url = '';
     messageOne.textContent = "Loading..."
     if (event.target.q) {
-        url = "http://localhost:3000/v1/user/getWeather?q=" + event.target.q.value;
+        url = "https://weatherapiforecast.herokuapp.com/v1/user/getWeather?q=" + event.target.q.value;
     } else if (event.target.userId) {
-        url = "http://localhost:3000/v1/user/getWeather?id=" + event.target.userId.value;
+        url = "https://weatherapiforecast.herokuapp.com/v1/user/getWeather?id=" + event.target.userId.value;
     } else if (event.target.zip) {
-        url = "http://localhost:3000/v1/user/getWeather?zip=" + event.target.zip.value;
+        url = "https://weatherapiforecast.herokuapp.com/v1/user/getWeather?zip=" + event.target.zip.value;
     } else if (event.target.lat && event.target.lon) {
-        url = "http://localhost:3000/v1/user/getWeather?lat=" + event.target.lat.value + "&lon=" + event.target.lon.value;
+        url = "https://weatherapiforecast.herokuapp.com/v1/user/getWeather?lat=" + event.target.lat.value + "&lon=" + event.target.lon.value;
     }
-
     fetch(url).then((response) => {
 
         response.json().then((data) => {
