@@ -99,17 +99,23 @@ function submitHandler(event) {
             if (data.error) {
                 messageOne.textContent = (data.error)
             } else {
-                messageTwo.className = "displayInline";
-                messageOne.textContent = "";
-                cityidDatalabel.innerHTML = data.result.cityId;
-                cityNameDatalabel.innerHTML = data.result.cityName
-                latitudeDatalabel.innerHTML = data.result.cordinate.latitude;
-                longitudeDatalabel.innerHTML = data.result.cordinate.longitude;
-                currentDatalabel.innerHTML = data.result.temprature.current;
-                minDatalabel.innerHTML = data.result.temprature.minimum;
-                maxDatalabel.innerHTML = data.result.temprature.maximum;
-                pressureDatalabel.innerHTML = data.result.temprature.pressure;
-                humidityDatalabel.innerHTML = data.result.temprature.humidity;
+                if (data.responseCode===200){
+                    event.target = null
+                    messageTwo.className = "displayInline";
+                    messageOne.textContent = "";
+                    cityidDatalabel.innerHTML = data.result.cityId;
+                    cityNameDatalabel.innerHTML = data.result.cityName
+                    latitudeDatalabel.innerHTML = data.result.cordinate.latitude;
+                    longitudeDatalabel.innerHTML = data.result.cordinate.longitude;
+                    currentDatalabel.innerHTML = data.result.temprature.current;
+                    minDatalabel.innerHTML = data.result.temprature.minimum;
+                    maxDatalabel.innerHTML = data.result.temprature.maximum;
+                    pressureDatalabel.innerHTML = data.result.temprature.pressure;
+                    humidityDatalabel.innerHTML = data.result.temprature.humidity;
+                } else {
+                    return messageOne.textContent = data.responseMessage
+                }
+                
             }
         })
 
