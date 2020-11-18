@@ -1,7 +1,6 @@
 const request = require('request')
 
 const getWeather = (req, res) => {
-    console.log("query : ", req.query)
     let url = '';
     if (req.query.q) {
         url = `http://api.openweathermap.org/data/2.5/weather?q=${req.query.q}&appid=${process.env.ACCESS_KEY}`;
@@ -21,7 +20,6 @@ const getWeather = (req, res) => {
         } else {
             const resData = JSON.parse(response.body);
             if (resData.cod === 200) {
-                console.log("response ", resData)
                 const result = {
                     cityId: resData.id,
                     cityName: resData.name,

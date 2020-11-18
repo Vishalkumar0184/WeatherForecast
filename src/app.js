@@ -1,5 +1,3 @@
-const morgan=require('morgan');
-const cors=require("cors");
 const path= require("path")
 const hbs= require("hbs")
 const express = require('express');
@@ -9,8 +7,6 @@ const app = express();
 const port = process.env.PORT
 
 app.use(bodyParser.json({extended : true, limit : '50mb'}))
-app.use(morgan("dev"));
-app.use(cors());
 
 app.use('/v1/user', require('../router/router'));
 
@@ -22,12 +18,10 @@ app.set("view engine","hbs");
 app.set("views",viewsPath);
 
 
-
 app.get("",(req,res)=>{                                         
 
     res.render("index",{
-
-        
+     
     });
 })
 

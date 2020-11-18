@@ -85,8 +85,6 @@ cityZipHandler.addEventListener("submit", (e) => {
 })
 
 function submitHandler(event) {
-    console.log("submitHandler called", event.target)
-    console.log('target ', event.target)
     let url = '';
     messageOne.textContent = "Loading..."
     if (event.target.q) {
@@ -101,7 +99,6 @@ function submitHandler(event) {
     fetch(url).then((response) => {
 
         response.json().then((data) => {
-            console.log('data', data)
             if (data.error) {
                 messageOne.textContent = (data.error)
             } else {
@@ -117,7 +114,6 @@ function submitHandler(event) {
                 maxDatalabel.innerHTML = data.result.temprature.maximum;
                 pressureDatalabel.innerHTML = data.result.temprature.pressure;
                 humidityDatalabel.innerHTML = data.result.temprature.humidity;
-                console.log("Data sent Sucessfully", data.result)
             }
         })
 
