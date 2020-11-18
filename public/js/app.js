@@ -84,13 +84,14 @@ function submitHandler(event) {
         event.target.q.value = null;
     } else if (event.target.userId) {
         url = "https://weatherapiforecast.herokuapp.com/v1/user/getWeather?id=" + event.target.userId.value;
-        event.target.q.value = null;
+        event.target.userId.value = null;
     } else if (event.target.zip) {
         url = "https://weatherapiforecast.herokuapp.com/v1/user/getWeather?zip=" + event.target.zip.value;
-        event.target.q.value = null;
+        event.target.zip.value=null
     } else if (event.target.lat && event.target.lon) {
         url = "https://weatherapiforecast.herokuapp.com/v1/user/getWeather?lat=" + event.target.lat.value + "&lon=" + event.target.lon.value;
-        event.target.q.value = null;
+        event.target.lat.value=null;
+        event.target.lon.value=null;
     }
     fetch(url).then((response) => {
 
